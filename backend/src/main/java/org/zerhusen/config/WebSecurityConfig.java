@@ -60,8 +60,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // don't create session
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 
-                .authorizeRequests()
-                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll();
+                // hack for Angular2 because in this wonderful SPA it checks with OPTIONS the resource...
+                .authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll();
 
                 // allow anonymous resource requests
 //                .antMatchers(
