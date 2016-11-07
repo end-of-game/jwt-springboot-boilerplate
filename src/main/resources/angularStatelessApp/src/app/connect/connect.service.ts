@@ -8,11 +8,13 @@ import { Connect } from './shared/connect';
 
 import { Observable, BehaviorSubject } from 'rxjs';
 
+import { environment } from './../../environments/environment.prod';
+
 @Injectable()
 export class ConnectService {
 
   private TOKEN_KEY: string = "jwtToken";
-  private BASE_URL: string = "";//http://localhost:8081";
+  private BASE_URL: string = environment.API_BASE_URL;//http://localhost:8081";
 
   // Observable string Sources
   private _connectSource: BehaviorSubject<Connect> = new BehaviorSubject<Connect>(new Connect());
