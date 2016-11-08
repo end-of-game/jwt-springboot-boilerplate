@@ -1,3 +1,4 @@
-FROM scratch
+FROM openjdk:latest
 
-RUN echo "lol"
+
+
