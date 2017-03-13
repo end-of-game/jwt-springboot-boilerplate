@@ -19,11 +19,10 @@ public class JwtDemoApplication {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/auth").allowedOrigins("http://localhost:4200");
-                registry.addMapping("/user").allowedOrigins("http://localhost:4200");
-                registry.addMapping("/persons").allowedOrigins("http://localhost:4200");
-                registry.addMapping("/protected").allowedOrigins("http://localhost:4200");
-                
+                  registry.addMapping("/**")
+                          .allowedOrigins( "*" )
+                          .allowedHeaders( "*" )
+                          .allowedMethods( "GET", "OPTIONS", "POST", "PUT", "DELETE"  );
             }
         };
     }
